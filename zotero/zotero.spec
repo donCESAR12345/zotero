@@ -3,7 +3,7 @@
 %global __provides_exclude_from %{_libdir}/%{name}
 
 Name:		zotero
-Version:	6.0.13
+Version:	7.0.9
 Release:	4%{?dist}
 Summary:	Zotero desktop application
 

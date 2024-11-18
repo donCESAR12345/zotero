@@ -5,7 +5,7 @@
 Name:           zotero
 Version:        7.0.9
 Release:        1%{?dist}
-Summary:        Reference Management Software
+Summary:        Zotero desktop application
 
 License:        AGPLv3
 URL:            https://www.zotero.org/

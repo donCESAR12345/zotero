@@ -3,7 +3,7 @@
 %global __provides_exclude_from %{_libdir}/%{name}
 
 Name:           zotero
-Version:        7.0.9
+Version:        7.0.15
 Release:        1%{?dist}
 Summary:        Zotero desktop application
 
@@ -57,6 +57,9 @@ install -Dm644 %{buildroot}%{_libdir}/%{name}/icons/icon128.png %{buildroot}%{_d
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Thu Mar 20 2025 César Montoya <sprit152009@gmail.com> - 7.0.15
+- Update to 7.0.15
+
 * Sun Nov 17 2024 César Montoya <sprit152009@gmail.com> - 7.0.9-1
 - Update to 7.0.9.
 - Use bundled .desktop.

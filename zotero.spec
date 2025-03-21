@@ -1,5 +1,6 @@
 %define debug_package %{nil}
 %define __requires_exclude ^(libmozsandbox|liblgpllibs|libmozsqlite3|libmozgtk|libmozwayland|libxul|libmozavutil)\.so
+%define source_url https://download.zotero.org/client/release/%{version}/Zotero-%{version}_linux-x86_64.tar.bz2
 %global __provides_exclude_from %{_libdir}/%{name}
 
 Name:           zotero
@@ -8,10 +9,9 @@ Release:        1%{?dist}
 Summary:        Zotero desktop application
 
 License:        AGPLv3
-URL:            https://www.zotero.org/
-Source0:        https://download.zotero.org/client/release/%{version}/Zotero-%{version}_linux-x86_64.tar.bz2
-
-BuildArch:      x86_64
+URL:            https://www.zotero.org
+Source:         Zotero-%{version}_linux-x86_64.tar.bz2
+ExclusiveArch:  x86_64
 BuildRequires:  desktop-file-utils
 BuildRequires:  tar
 
@@ -20,12 +20,15 @@ Requires:       nspr
 Requires:       nss
 Requires:       nss-util
 
-Provides:       zotero
+Provides:       zotero = %{version}-%{release}
+
 
 %description
 Zotero is a free, easy-to-use tool to help you collect, organize, annotate, cite, and share research.
 
 %prep
+# Download the source tarball if it doesn't exist
+wget %{source_url} -P %{_sourcedir}
 %autosetup -n Zotero_linux-x86_64
 
 %build
